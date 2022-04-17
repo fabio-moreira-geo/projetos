@@ -25,7 +25,7 @@ def is_mp3_file(event):
 
 
 def is_image_file(event):
-    if extension_type(event) in ('png', 'jpg', 'bmp', 'gif', 'raw'):
+    if extension_type(event) in ('png', 'jpg', 'bmp', 'gif', 'raw', 'jpeg', 'tif'):
         return True
     return False
 
