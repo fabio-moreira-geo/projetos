@@ -65,9 +65,13 @@ def is_executable_file(event):
         return True
     return False
 
+def is_zip_file(event):
+    if extension_type(event) in ('zip', 'rar'):
+        return True
+    return False
 
 def make_folder(foldername):
-    os.chdir('D:\\Download')
+    os.chdir('C:\\Users\\Usuario\\Downloads')
     if os.path.exists(foldername) == True:
         print('Folder already exists, skipping creation')
         return os.getcwd() + os.sep + str(foldername)

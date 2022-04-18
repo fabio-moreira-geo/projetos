@@ -56,6 +56,10 @@ class Handler(FileSystemEventHandler):
             path_to_folder = make_folder('executable files')
             move_to_new_corresponding_folder(event, path_to_folder)
             return
+        elif is_zip_file(event) == True:
+            path_to_folder = make_folder('zip files')
+            move_to_new_corresponding_folder(event, path_to_folder)
+            return
 
     @staticmethod
     def on_deleted(event):
@@ -68,7 +72,7 @@ class Handler(FileSystemEventHandler):
 
 file_change_handler = Handler()
 observer = Observer()
-os.chdir('D:\\Download')
+os.chdir('C:\\Users\\Usuario\\Downloads')
 print(os.getcwd())
 observer.schedule(file_change_handler, os.getcwd(), recursive=False,)
 observer.start()
