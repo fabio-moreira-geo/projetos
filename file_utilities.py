@@ -25,7 +25,7 @@ def is_mp3_file(event):
 
 
 def is_image_file(event):
-    if extension_type(event) in ('png', 'jpg', 'bmp', 'gif', 'raw', 'jpeg', 'tif'):
+    if extension_type(event) in ('png', 'jpg', 'bmp', 'gif', 'raw', 'jpeg'):
         return True
     return False
 
@@ -43,7 +43,7 @@ def is_doc_file(event):
 
 
 def is_spreadsheet_file(event):
-    if extension_type(event) in ('xls', 'xlsx'):
+    if extension_type(event) in ('xls', 'xlsx', 'csv', '.csv'):
         return True
     return False
 
@@ -61,12 +61,16 @@ def is_code_file(event):
 
 
 def is_executable_file(event):
-    if extension_type(event) in ('exe', 'msi'):
+    if extension_type(event) in ('exe', 'msi', 'msp'):
         return True
     return False
 
 def is_zip_file(event):
-    if extension_type(event) in ('zip', 'rar'):
+    if extension_type(event) in ('zip', 'rar', 'tar', 'bz2', 'gz'):
+        return True
+    return False
+def is_gis_file(event):
+    if extension_type(event) in ('shp', 'dwg', 'dxf', 'bak', 'sbx', 'kml', 'kmz', 'xml', 'jgwx', 'tif', 'tiff', 'ovr'):
         return True
     return False
 

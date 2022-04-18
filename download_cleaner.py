@@ -60,6 +60,10 @@ class Handler(FileSystemEventHandler):
             path_to_folder = make_folder('zip files')
             move_to_new_corresponding_folder(event, path_to_folder)
             return
+        elif is_gis_file(event) == True:
+            path_to_folder = make_folder('gis files')
+            move_to_new_corresponding_folder(event, path_to_folder)
+            return
 
     @staticmethod
     def on_deleted(event):
